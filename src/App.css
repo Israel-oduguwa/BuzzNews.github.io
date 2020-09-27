@@ -1,38 +1,809 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none!important;
+  list-style: none;
+}
+:root {
+    --primaryColor: #af9a7d;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --darkGrey: #cfcfcf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 3px;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+/* Fonts*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,500);
+/*Navbar Starting*/
+.navbar{
+ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background-color:#2a2828;
+    z-index: 1;
+  position: fixed;
+  box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.2);
+ 
+
+ /*  height: 10vh;*/
+}
+.nav-header{
+ width: 100%;
+ height: 0vh!important;
+}
+body{
+  background-color:white!important;
+  height:100vh;
+}
+.home-page{
+  min-height:100vh;
+}
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-left: auto;
+  top: 2vh;
+ position: absolute;
+  right: 2vh;
+ 
+}
+.nav-links {
+    height: 0;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    list-style-type: none;
+   margin-top:5vh;
+    z-index:1!important;
+   
+  }
+  .logo{
+    font-size:3.9vh;
+    z-index:100;
+    margin-left: 10vh;
+    margin-top: 1px!important;
+    color: white;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    height: 100%;
+  }
+.nav-links a{
+  color: rgb(255, 255, 255);
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
   text-align: center;
+  font-family: "Quicksand";
+  font-size: 2.3vh;
+  font-weight: 500;
+  letter-spacing:0.5px;
+  transition: all 0.1s ease-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-links a .link-icons:hover{
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.link-icons{
+ 
+  width: 30px;
+}
+
+.nav-btn:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  color:white;
+}
+.show-nav {
+  
+    width: 100%;
+   
+    height:60vh!important;
+  
+}
+@media screen and (min-width: 768px){
+  .navbar{
+    width: 100%;
+   height: 12vh!important;
+  }
+  .nav-header{
+    width: 50%!important;
+   }
+   .link-icons{
+ display: none;
+  }
+  
+  .logo{
+    position: inherit!important;
+    margin-left: 0vh;
+    margin-top: 1vh!important;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: -1rem;
+    margin-top:0vh;
+  }
+  .logo{
+    font-size:3.4vh;
+    font-family: "Poppins",sans-serif;
+  }
+  footer{
+    min-height: 70vh!important;
+  }
+  .nav-links a {
+    border: none;
+    padding: 1rem 0;
+    font-weight:600;
+    color:#ffffff!important;
+  }
+  .nav-links a:hover{
+    
+  }
+  .searchTerm{
+    width: 100% !important;
+  }
+  .search{
+    width: 60%!important;
+    position: inherit!important;
+      display: flex!important;
+      margin-left:9vh;
+      margin-top:0.2vh!important;
+  }
+ 
+  .searchTerm{
+    border: 2px solid #00B4CC!important;
+    height: 33px!important;
+  }
+  .searchButton{
+    height: 33px!important;
+    border-radius: 0 5px 5px 0!important;
+    font-size: 19px!important;
+  }
+ 
+  .dropdown{
+    transition: all 1s ease;
+   }
+   .show {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px){
+  .breaking-images{
+    width: 370px!important;
+  }
+  .dropdown{
+    position: absolute ;
+    left:100vh!important;
+   
+   }
+}
+@media screen and (max-width: 375px){
+  body{
+    overflow-x:hidden;
+  }
+  .breaking-images{
+    width: 100%!important;
+
+  }
+  
+  
+  .Logo-head{
+    font-size: 4vh;
+    margin-top: 1vh;
+    
+  }
+  .search {
+    width: 60%!important;
+    margin-left: 10vh!important;
+
+  }
+  .searchButton{
+    border-radius: 0 5px 5px 1px!important;
+  }
+  footer{
+    width: 100%!important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+/*Search Button*/
+
+.search {
+  width: 100%!important;
+  margin-left: 0vh!important;
+  position: inherit;
+  display: flex!important;
+  margin-top: -3vh;
+}
+.searchTerm {
+  margin-top: 1vh;
+  width: 100%;
+  border: 1.4px solid rgb(93, 91, 91)!important;
+  border-right: none;
+  
+  font-family:"Quicksand";
+  padding: 5px;
+  height: 31px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: rgb(65, 70, 71);
+}
+
+.searchButton {
+  margin-top: 1.01vh;
+  width: 40px;
+  height: 31px;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(73, 69, 69);
+  
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 6px;
+  cursor: pointer;
+  font-size: 17px;
+}
+/* End of navbar*/
+/*Navbar ending*/
+
+/* Start of the header*/
+.header{
+  background-color: rgb(19, 18, 18);
+  margin-top: 12vh;
+  padding: 0.5rem 0;
+}
+.carousel .thumbs-wrapper{
+  display:none;
+}
+.carousel .control-dots{
+  display: none;
+}
+.carousel .carousel-status{
+  display:none
+}
+.carousel .slide .legend{
+  font-size:2.7vh;
+  color:white;
+
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide img{
+  height: 350px;
+}
+.top-image { 
+  margin-top: 1vh;
+background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(images/holiday.jpeg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 220px;
+ width: 113%;
+    margin-left: -3vh;
+}
+.low-left {
+  margin-top:1vh;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(images/movies.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 220px;
+ width: 115%;
+ width: 125%;
+    margin-left: -3vh;
+    
+}
+.low-right  {
+  
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(images/pizza-ready-for-baking-413x275.jpg);
+  margin-top:1vh;
+  height: 220px;
+  margin-left: -1vh;
+  width: 118%;
+ 
+}
+.down-side{
+  display: flex!important;
+  flex-wrap:nowrap;
+ 
+}
+.carousel-root {
+  outline: none;
+  margin-left: -3vh;
+  width: 113%;
+}
+.hero-wrapper{
+  margin-top:15vh;
+  position: absolute;
   color: white;
+  margin-left: 3vh;
+  height: 2px;
+}
+.hero-wrapper-low{
+  margin-top:13vh;
+  position: absolute;
+  color: white;
+  margin-left: 2vh;
+  height: 2px;
+}
+.title{
+  font-size: 12px;
+  font-weight: 700;
+  display:block;
+  text-transform: uppercase;
+  font-family: 'Poppins';
+  margin-bottom: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.title:hover{
+  color: rgb(231, 54, 172);
+}
+.info a{
+  font-size: 16px;
+  font-weight: 700;
+  display:block;
+  margin-bottom: 5px;
+  font-family: 'Poppins';
+  transition: all 0.5s ease-in-out;
+}
+.info a :hover{
+ color:rgb(231, 54, 172);
+}
+@media screen and (min-width: 768px){
+  .header{
+    background-color:rgba(36, 31, 31, 0.1);
+    margin-top: 12vh;
+  }
+  .carousel-root {
+    outline: none;
+    margin-left: 0vh!important;
+    width: 100%!important;
 }
 
-.App-link {
-  color: #61dafb;
+  .carousel .thumbs-wrapper{
+    display:none;
+  }
+  .carousel .control-dots{
+    display: none;
+  }
+  .carousel .carousel-status{
+    display:none
+  }
+  .carousel .slide .legend{
+    font-size:3.1vh!important;
+    color:white;
+  }
+  .hero-wrapper{
+    margin-top:25vh;
+    position: absolute;
+    color: white;
+    margin-left: 3vh;
+    height: 2px;
+  }
+  .title{
+    font-size:2.3vh;
+  }
+  .info{
+    font-size:2.7vh
+  }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide img{
+    height: 550px;
+  }
+  .top-image {
+    width: 100%;
+    height: 290px!important;
+    margin-top: 0vh!important;
+    margin-left:0vh!important;
+  }
+  .low-left {
+    width:100%;
+    margin-top:1vh;
+    height: 252px!important;
+    margin-left:0vh!important;
+  }
+  .low-right {
+   
+    width:100%!important;
+    margin-top:1vh;
+    margin-left:0vh!important;
+    height: 252px!important;
+
+   
+  }
+  .breaking-images{
+    width: 180px!important;
+    height:200px!important;
+  }
+  .Breaking-news{
+    margin-top: 3vh!important;
+    overflow-x: hidden;
+    min-height:100vh;
+  }
+  section.Top-news{
+    margin-top: 4vh!important;
+  }
+}
+/*Start of Breaking News*/
+section.Top-news{
+  overflow-x: hidden;
+  margin-top: 8vh;
+}
+.Top-news{
+  margin-top:2vh;
+}
+h4{
+  font-family: "Montserrat", sans-serif;
+  color: #282828;
+  line-height: 1.3;
+  font-weight: 700;
+}
+a{
+  color: rgb(4, 6, 27);
+}
+a:hover{
+  color: rgb(1, 26, 114);
+}
+.breaking-images{
+  width: 360px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 3px;
+  height: 300px;
+  background: rgba(0,0,0,0.2);
+}
+.breaking-images:hover{
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  opacity: 0.9;
+
+}
+.breaking-title{
+  font-weight: 500;
+  font-size: 2.6vh;
+  color: rgb(223, 219, 219);
+  position:absolute;
+  margin-top: -16vh;
+  color: rgb(236, 234, 234);
+  width: 76%;
+  background: rgba(0,0,0,0.6);
+  margin-left: 2vh;
+  
+  
+  display:block;
+  
+  font-family: 'Poppins';
+}
+.breaking-content{
+  color: #505050;
+    
+    font-size: 16px;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+@media screen and (min-width: 768px){
+    
+
+.breaking-images{
+  width: 100%!important;
+  height:220px!important;
+}
+.Breaking-news{
+  margin-top: 3vh!important;
+  overflow-x: hidden;
+}
+section.Top-news{
+  margin-top: 4vh!important;
+}
+.Nija-news{
+  margin-top:4vh;
+  overflow: hidden;
+}
+.nija-word{
+  margin-top: 10vh;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding:1rem 0;
+}
+.breaking-title{
+  font-weight: 500;
+  font-size: 2.3vh;
+  color: rgb(245, 242, 242);
+  position:absolute;
+  margin-top: -9.7vh;
+
+  width: 76%;
+  background: rgba(0,0,0,0.6);
+  margin-left: 2vh;
+  display:block;
+  font-family: 'Poppins';
 }
 
-@keyframes App-logo-spin {
-  from {
+
+}
+.nija-titile{
+  font-weight: 800;
+  font-size: 2.3vh;
+  color: rgb(245, 242, 242);
+  font-family: 'Poppins';
+}
+/* css loader*/
+
+.loads{
+ Position:absolute;
+
+
+}
+.flex {
+  min-height: 60pt;
+} 
+
+@keyframes loading {
+  0% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+  25% {
+    height: 4pt;
+    margin-top: 23pt;
+  }
+  50% {
+    width: 4pt;
+  }
+  75% {
+    width: 50pt;
+  }
+  100% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+}
+
+.loader {
+  width: 50pt;
+  height: 50pt;
+  border-radius: 100%;
+  border: #6767fa 4pt solid;
+  
+  align-items: center;
+  background-color: transparent;
+  animation: loading 1s infinite;
+}
+
+.load-text {
+  padding-top: 15px;
+  text-align: center;
+  font: 14pt "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: lighten(#6767fa, 75%);
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  margin-top:20vh;
+  width: 80px;
+  height: 80px;
+  margin-left: 20vh;
+}
+@media screen and (min-width: 768px){
+  .lds-roller{
+    text-align: center;
+    position: fixed;
+  z-index: 999;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+    
+  }
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgb(80, 69, 69);
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+/* for world news*/
+footer{
+  background: linear-gradient(rgba(22, 22, 22, 0.97),rgba(20, 20, 20, 0.97)),url(images/modern-building-against-sky-323780.jpg);
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  margin-top:20vh;
+  
+ 
+
+}
+.explore{
+  margin-top: 5vh;
+  font-family:"Montserrat";
+  font-size: 4.2vh;
+}
+.explore-links{
+  margin-top: 3vh;
+}
+.expl-links{
+  list-style: none;
+}
+.expl-links li{
+  list-style: none;
+  margin: 0 0 3vh 0!important;
+}
+.expl-links li a{
+  color: white;
+  font-size: 2.4vh;
+  transition: all 0.1s ease;
+  font-weight: 400;
+  font-family: "Montserrat";
+  letter-spacing: 0.6px;
+}
+.expl-links li a:hover{
+  color: rgb(92, 183, 240) !important;
+}
+.About-wrapper{
+  margin-top: 3vh;
+  font-family: "Montserrat";
+}
+.about-title{
+  font-size: 3.2vh;
+  font-weight: 700;
+}
+.about-news{
+  margin-top: 2vh;
+}
+.Social-media-wrapper{
+  margin-top:3vh;
+}
+.follow-us{
+  font-size: 3.2vh;
+  font-weight: 700;
+}
+.social-links {
+color: rgb(248, 236, 236);
+display: flex;
+justify-content: space-evenly !important;
+ 
+}
+.social-links li a{
+  color:white;
+  font-size:6vh;
+}
+.social-links li a:hover{
+  color: rgb(69, 124, 219);
+}
+.logo{
+  margin-top: 3vh;
+}
+.foote-logo img{
+  width:200px;
+  margin-top:6vh;
+}
+/*Progress bar*/
+.progress-div {
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+}
+
+.progress {
+  background-color: rgb(62, 122, 235);
+  height: 10px;
+  border-radius: 1rem;
+ width:100%;
+  transition: 15s ease;
+  transition-delay: 0.5s;
+}
+/* Covid 19 page*/
+.covid-page{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/*World News Section*/
+.World-news{
+  overflow-x: hidden;
+  margin-top: 13vh;
+
 }
